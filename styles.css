@@ -1,0 +1,300 @@
+/* Global reset and typography */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    background: #f0f4f3;
+    color: #1f2933;
+    min-height: 100vh;
+}
+
+/* Background image blur simulation */
+.gp-page-bg {
+    position: fixed;
+    inset: 0;
+    /* Local background image for login page */
+    background-image: url("../../dlsjbc.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.gp-login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    position: relative;
+}
+
+.gp-login-card {
+    width: 100%;
+    max-width: 380px;
+    /* Mostly solid white, with a little blur so background shows slightly */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(100%);
+    -webkit-backdrop-filter: blur(100%);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                0 2px 8px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    padding: 28px 20px 20px;
+    text-align: center;
+    position: relative;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.gp-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    color: #1f2933;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.gp-back-btn:hover {
+    background: rgba(22, 163, 74, 0.9);
+    color: #ffffff;
+    transform: translateX(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.gp-back-btn:active {
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .gp-back-btn {
+        top: 16px;
+        left: 16px;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+.gp-logo-section {
+    margin-bottom: 24px;
+}
+
+.gp-logo-circle {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    background: rgba(22, 163, 74, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+}
+
+.gp-logo-text {
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(22, 163, 74, 0.95);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.gp-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.gp-input input {
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    padding: 12px 18px;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    color: #1f2933;
+}
+
+.gp-input input:focus {
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(22, 163, 74, 0.5);
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+}
+
+.gp-input input::placeholder {
+    color: rgba(31, 41, 51, 0.6);
+}
+
+
+.gp-forgot {
+    font-size: 12px;
+    color: rgba(37, 99, 235, 0.9);
+    text-decoration: none;
+    margin-top: -4px;
+    margin-bottom: 4px;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.gp-forgot:hover {
+    text-decoration: underline;
+}
+
+.gp-btn-link {
+    color: rgba(22, 163, 74, 0.95);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease, transform 0.2s ease;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.gp-btn-link:hover {
+    color: rgba(21, 128, 61, 1);
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+.gp-btn-primary {
+    margin-top: 4px;
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    padding: 11px 0;
+    background: rgba(22, 163, 74, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(22, 163, 74, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background 0.12s ease;
+}
+
+.gp-btn-primary:hover {
+    background: rgba(21, 128, 61, 0.9);
+    box-shadow: 0 10px 24px rgba(22, 163, 74, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.gp-btn-primary:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 0 6px 14px rgba(22, 163, 74, 0.35);
+}
+
+.gp-role-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.gp-toggle-btn {
+    flex: 1;
+    max-width: 120px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 0;
+    font-size: 11px;
+    cursor: pointer;
+    background: rgba(229, 229, 229, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(31, 41, 51, 0.8);
+    transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.gp-toggle-btn:hover {
+    background: rgba(212, 212, 212, 0.5);
+    transform: translateY(-1px);
+}
+
+.gp-toggle-btn--active:hover {
+    background: rgba(21, 128, 61, 0.85);
+}
+
+.gp-toggle-btn--active {
+    background: rgba(22, 163, 74, 0.8);
+    color: #fefefe;
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Small screens tweaks */
+@media (max-width: 420px) {
+    .gp-login-card {
+        padding: 24px 18px 18px;
+    }
+
+    .gp-logo-circle {
+        width: 58px;
+        height: 58px;
+        font-size: 20px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gp-btn-primary:hover {
+    animation: bounce 0.3s ease;
+}
+
+.gp-btn-primary:active,
+.gp-btn-link:active,
+.gp-toggle-btn:active,
+.gp-back-btn:active {
+    transform: scale(0.98);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-3px);
+    }
+    60% {
+        transform: translateY(-1px);
+    }
+}
+
+
